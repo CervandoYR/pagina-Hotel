@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hotel Malibu - Página de Inicio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/habitaciones.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <script src="JS/secciones.js"></script>
+    <script src="JS/encuesta.js"></script>
+    <script src="JS/chatbot.js"></script>
+    <script src="JS/reservas.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="img/logo.jpeg" alt="Logo de Hotel Malibu" style="width: 350px; display: block; margin: 0 auto;">
+        <h1>Hotel Malibu</h1>
+        <p class="texto-movil">Donde tu descanso es nuestra prioridad</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#habitaciones" onclick="mostrarContenido('habitaciones'); return false;"
+                    style="font-size: 24px;">Habitaciones</a></li>
+            <li><a href="#servicios" onclick="mostrarContenido('servicios'); return false;"
+                    style="font-size: 24px;">Servicios</a></li>
+            <li><a href="#reservas" onclick="mostrarContenido('reservas'); return false;"
+                    style="font-size: 24px;">Reservas</a></li>
+            <li><a href="#contacto" onclick="mostrarContenido('contacto'); return false;"
+                    style="font-size: 24px;">Contacto</a></li>
+            <li><a href="#tabla" onclick="mostrarContenido('tabla'); return false;" style="font-size: 24px;">Precios</a>
+            </li>
+            <li><a href="#encuesta" onclick="mostrarContenido('encuesta'); return false;"
+                    style="font-size: 24px;">Encuesta</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="habitaciones">
+            <h2>Nuestras Habitaciones</h2>
+            <p>Aquí puedes encontrar información sobre nuestras habitaciones disponibles y sus características </p>
+            <p>Lista de habitaciones:</p>
+            <div class="habitaciones-container" id="habitacionesContainer">
+                <!-- Habitaciones generadas dinámicamente -->
+                <script>
+                    const habitacionesContainer = document.getElementById('habitacionesContainer');
+                    const habitaciones = [
+                        { numero: 1, tipo: 'individual' },
+                        { numero: 2, tipo: 'doble' },
+                        { numero: 3, tipo: 'suite' },
+                        { numero: 4, tipo: 'promocion_individual_internet' },
+                        { numero: 5, tipo: 'promocion_individual_cable_internet' },
+                        { numero: 6, tipo: 'individual' },
+                        { numero: 7, tipo: 'doble' },
+                        { numero: 8, tipo: 'suite' },
+                        { numero: 9, tipo: 'promocion_individual_internet' },
+                        { numero: 10, tipo: 'promocion_individual_cable_internet' },
+                        { numero: 11, tipo: 'individual' },
+                        { numero: 12, tipo: 'doble' },
+                        { numero: 13, tipo: 'suite' },
+                        { numero: 14, tipo: 'promocion_individual_internet' },
+                        { numero: 15, tipo: 'promocion_individual_cable_internet' },
+                        { numero: 16, tipo: 'individual' },
+                        { numero: 17, tipo: 'doble' },
+                        { numero: 18, tipo: 'suite' },
+                        { numero: 19, tipo: 'promocion_individual_internet' },
+                        { numero: 20, tipo: 'promocion_individual_cable_internet' },
+                        { numero: 21, tipo: 'individual' },
+                        { numero: 22, tipo: 'doble' },
+                        { numero: 23, tipo: 'suite' },
+                        { numero: 24, tipo: 'promocion_individual_internet' },
+                        { numero: 25, tipo: 'promocion_individual_cable_internet' },
+                        { numero: 26, tipo: 'individual' },
+                        { numero: 27, tipo: 'doble' },
+                        { numero: 28, tipo: 'suite' },
+                        { numero: 29, tipo: 'promocion_individual_internet' },
+                        { numero: 30, tipo: 'promocion_individual_cable_internet' },
+                        { numero: 31, tipo: 'individual' },
+                        { numero: 32, tipo: 'doble' },
+                        { numero: 33, tipo: 'suite' },
+                        { numero: 34, tipo: 'promocion_individual_internet' },
+                        { numero: 35, tipo: 'promocion_individual_cable_internet' },
+                        { numero: 36, tipo: 'individual' },
+                        { numero: 37, tipo: 'doble' },
+                        { numero: 38, tipo: 'suite' },
+                        { numero: 39, tipo: 'promocion_individual_internet' },
+                        { numero: 40, tipo: 'promocion_individual_cable_internet' },
+                        { numero: 41, tipo: 'suite' },
+                        { numero: 42, tipo: 'promocion_individual_internet' },
+                        { numero: 43, tipo: 'promocion_individual_cable_internet' },
+                        { numero: 44, tipo: 'individual' },
+                        { numero: 45, tipo: 'doble' },
+                        { numero: 46, tipo: 'suite' },
+                        { numero: 47, tipo: 'promocion_individual_internet' },
+                        { numero: 48, tipo: 'promocion_individual_cable_internet' },
+                        { numero: 49, tipo: 'individual' }
+                    ];
+
+                    habitaciones.forEach(hab => {
+                        const habitacionDiv = document.createElement('div');
+                        habitacionDiv.className = 'habitacion';
+                        habitacionDiv.dataset.estado = 'Disponible';
+                        habitacionDiv.dataset.tipo = hab.tipo;
+                        habitacionDiv.dataset.numero = hab.numero; // Agregar data-numero
+                        habitacionDiv.textContent = hab.numero;
+
+                        // Añadir evento de clic
+                        habitacionDiv.addEventListener('click', handleHabitacionClick);
+
+                        habitacionesContainer.appendChild(habitacionDiv);
+                    });
+
+                </script>
+            </div>
+            <p>¡Haz tu reserva ahora!</p>
+            <p>Promociones: En días feriados y días festivos, el precio se reduce un 15%</p>
+            <p>Las habitaciones 43 a 49 son conocidas como "Habitaciones premium" las cuales cuentan con una mayor
+                prioridad en atención al cliente, mejores vistas, camas y mayor rango de canales de paga y por tan solo
+                80 dólares más por noche.</p>
+            <p>Imágenes referenciales:</p>
+            <div class="imagen-container img">
+                <img src="img/imagenHab1.jpg">
+                <img src="img/imagenHab2.jpg">
+                <img src="img/imagenHab3.jpg">
+                <img src="img/imagenHab4.jpg">
+            </div>
+        </section>
+
+        <div id="modalReserva" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Reservar Habitación</h2> 
+                <form id="reservaForm" onsubmit="return validarFormulario(event)" method="post">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                    <span id="errorNombre" class="error"></span><br><br>
+
+                    <label for="dni">DNI:</label>
+                    <input type="text" id="dni" name="dni" required>
+                    <span id="errorDni" class="error"></span><br><br>
+
+                    <label for="telefono">Teléfono:</label>
+                    <input type="text" id="telefono" name="telefono" required>
+                    <span id="errorTelefono" class="error"></span><br><br>
+
+                    <label for="correo">Correo:</label>
+                    <input type="email" id="correo" name="correo" required><br><br>
+
+                    <label for="numeroHabitacion">Número de habitación:</label>
+                    <input type="text" id="numeroHabitacion" name="numeroHabitacion" readonly><br><br>
+
+                    <label for="tipoHabitacion">Tipo de Habitación:</label>
+                    <input type="text" id="tipoHabitacion" name="tipoHabitacion" readonly><br><br>
+
+                    <label for="fechaInicio">Fecha de Inicio:</label>
+                    <input type="date" id="fechaInicio" name="fechaInicio" required><br><br>
+
+                    <label for="fechaFin">Fecha de Fin:</label>
+                    <input type="date" id="fechaFin" name="fechaFin" required><br><br>
+
+                    <label for="precioSubTotal">Precio de habitación:</label>
+                    <input type="text" id="precioSubTotal" name="precioSubTotal" readonly><br><br>
+
+                    <label for="precioTotal">Precio Total:</label>
+                    <input type="text" id="precioTotal" name="precioTotal" readonly><br><br>
+
+                    <input type="submit" value="Reservar"
+                        style="background-color: #4CAF50; color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; font-size: 18px; margin-top: 20px;">
+                </form>
+            </div>
+        </div>
+
+        <section id="servicios">
+            <h2>Nuestros Servicios</h2>
+            <p2>Ofrecemos una amplia gama de servicios para que tu estadía sea cómoda y placentera.</p2>
+            <div class="servicio">
+                <div class="servicio-texto">
+                    <h3>1. <strong>Atención al cliente</strong></h3>
+                    <p>Contamos con un excelente atención al cliente disponible 24/7 el cual puedes contactar desde la
+                        comodidad de tu habitación usando el número telefónico apuntando al lado del teléfono incluido
+                        en la habitación (No se cobran costos de llamada).</p>
+                </div>
+                <img src="img/cliente.jpg" alt="Atención al cliente" class="servicio-img">
+            </div>
+            <div class="servicio">
+                <div class="servicio-texto">
+                    <h4>2. <strong>Patio de comidas</strong></h4>
+                    <p>Contamos con un patio de comidas con un horario desde las 7:00 AM hasta las 11:00 PM en donde
+                        podrás comer todo lo que desees dependiendo de la hora. Además, cada cierto tiempo se realizarán
+                        eventos recreativos.</p>
+                </div>
+                <img src="img/comida.jpg" alt="Patio de comidas" class="servicio-img">
+            </div>
+            <div class="servicio">
+                <div class="servicio-texto">
+                    <h4>3. <strong>Internet y Cable</strong></h4>
+                    <p>Cada habitación cuenta con una televisión con 50 canales de cable disponibles sin costo junto con
+                        una conexión a internet 4G pero los clientes cuentan con la posibilidad de añadir más canales y
+                        una conexión 5G por un módico precio adicional.</p>
+                </div>
+                <img src="img/internet.jpg" alt="Internet y Cable" class="servicio-img">
+            </div>
+            <div class="servicio">
+                <div class="servicio-texto">
+                    <h4>4. <strong>Piscina</strong></h4>
+                    <p>En la azotea de nuestro hotel se encuentra una piscina grande exclusiva para nuestros clientes la
+                        cual cuenta con las herramientas necesarias para garantizar una agua limpia junto con una
+                        limpieza semanal por parte de nuestros empleados, asegurándose que nuestros clientes disfruten
+                        de una experiencia saludable y divertida.</p>
+                </div>
+                <img src="img/piscina.jpg" alt="Piscina" class="servicio-img">
+            </div>
+        </section>
+
+        <section id="reservas">
+            <h2 style="font-size: 26px;">Reserva Ahora</h2>
+            <p style="font-size: 24px;">¿Interesado en alojarte en nuestro hotel? ¡Haz tu reserva ahora mismo!</p>
+            <div class="contacto-reservas">
+                <p style="font-size: 22px; margin-bottom: 15px;"><strong>Número telefónico para reservas:</strong>
+                    983211221</p>
+                <p style="font-size: 22px; margin-bottom: 15px;"><strong>Horario de atención:</strong> Todos los días de
+                    8:00 AM a 11:00 PM</p>
+                <p style="font-size: 22px; margin-bottom: 15px;"><strong>Correo electrónico para reservas:</strong>
+                    Malibudescansos@hotmail.com</p>
+                <p style="font-size: 22px; margin-bottom: 15px;"><strong>Número de WhatsApp:</strong> 956843220</p>
+                <p style="font-size: 22px; margin-bottom: 15px;"><strong>Horario de atención:</strong> Lunes a Sábado de
+                    9:00 AM a 10:00 PM</p>
+                <p style="font-size: 22px; margin-bottom: 15px;"><strong>Dirección:</strong> V.E.S Sector 4 Grupo 15 Mz
+                    O Lote 15</p>
+
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2 style="font-size: 26px;">Contacto</h2>
+            <p style="font-size: 24px;">¿Tienes alguna pregunta o comentario? ¡Contáctanos!</p>
+            <div class="contacto-info">
+                <p Style="font-size: 22px; margin-bottom: 15px;"><strong>Número telefónico para dudas y/o
+                        quejas:</strong> 2921831</p>
+                <p Style="font-size: 22px; margin-bottom: 15px;"><strong>Correo electrónico para dudas y/o
+                        quejas:</strong> malibupreguntas@hotmail.com</p>
+                <p Style="font-size: 22px; margin-bottom: 15px;"><strong>Correo electrónico para negocios:</strong>
+                    malibunegocios@hgmail.com</p>
+                <div>
+                    <a href="https://www.facebook.com/" target="_blank"><img src="img/logoface.png" alt="Facebook"
+                            style="width: 50px; height: 50px;"></a>
+                    <a href="https://www.instagram.com/" target="_blank"><img src="img/logoisnta.png" alt="Instagram"
+                            style="width: 50px; height: 50px;"></a>
+                </div>
+        </section>
+        <section id="tabla">
+            <h2>Precios</h2>
+            <table>
+                <tr>
+                    <th>Tipo de Habitación</th>
+                    <th>Precio por Noche</th>
+                </tr>
+                <tr>
+                    <td>Habitación Individual</td>
+                    <td>$100</td>
+                </tr>
+                <tr>
+                    <td>Habitación Doble</td>
+                    <td>$150</td>
+                </tr>
+                <tr>
+                    <td>Suite</td>
+                    <td>$250</td>
+                </tr>
+                <tr>
+                    <td>Promoción: Habitación individual + Internet 5G</td>
+                    <td>$130</td>
+                </tr>
+                <tr>
+                    <td>Promoción: Habitación individual + Cable premium + Internet 5G</td>
+                    <td>$145</td>
+                </tr>
+                <tr>
+                    <td>Habitación Premium</td>
+                    <td>$300</td>
+                </tr>
+                <tr>
+                    <td>Promoción: Habitacion doble + Internet 5G</td>
+                    <td>$180</td>
+            </table>
+        </section>
+        <section id="encuesta">
+            <h2>Encuesta de Opinión</h2>
+            <div class="imagen-container1">
+                <img src="img/hotel5.jpg">
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <form id="encuestaForm" onsubmit="return enviarFormulario(event)" method="post"
+                    style="font-size: 18px;">
+
+                    <p style="font-size: 20px;">1. En una escala del 1 al 10, ¿qué tan bueno cree que es nuestro
+                        proyecto?</p>
+                    <input type="number" name="puntuacion_proyecto" min="1" max="10" inputmode="numeric" required
+                        style="font-size: 18px;">
+                    <p style="font-size: 20px;">2. ¿Qué opinión tiene sobre la primera versión de nuestra página web?
+                    </p>
+                    <textarea name="opinion_version" rows="6" required style="font-size: 18px;"></textarea>
+                    <p style="font-size: 20px;">3. ¿Tiene alguna idea que quisiera aportar?</p>
+                    <textarea name="ideas_aportar" rows="6" style="font-size: 18px;"></textarea>
+                    <p style="font-size: 20px;">4. ¿Qué tipo de actividades recreativas le gustaría encontrar durante su
+                        estadía en nuestro hotel?</p>
+                    <textarea name="actividades_recreativas" rows="6" style="font-size: 18px;"></textarea>
+                    <p style="font-size: 20px;">5. ¿Qué servicio le gustaría que agregáramos?</p>
+                    <input type="text" name="servicio_agregar" style="font-size: 18px;">
+                    <p style="font-size: 20px;">6. ¿Cree que los precios por noche son accesibles?</p>
+                    <select name="precios_accesibles" required onchange="mostrarRazon(this)" style="font-size: 18px;">
+                        <option value="">Seleccione</option>
+                        <option value="si">Sí</option>
+                        <option value="no">No</option>
+                    </select>
+                    <div id="razon_precios_accesibles" style="display: none;">
+                        <p style="font-size: 20px;">¿Podría decirnos por qué no?</p>
+                        <textarea name="razon_precio" rows="4" style="font-size: 18px;"></textarea>
+                    </div>
+                    <p style="font-size: 20px;">7. ¿Cree que la información disponible en la página es suficiente para
+                        entender cómo funciona este hotel?</p>
+                    <select name="informacion_suficiente" required onchange="mostrarRazon(this)"
+                        style="font-size: 18px;">
+                        <option value="">Seleccione</option>
+                        <option value="si">Sí</option>
+                        <option value="no">No</option>
+                    </select>
+                    <div id="razon_informacion_suficiente" style="display: none;">
+                        <p style="font-size: 20px;">¿Podría decirnos por qué no?</p>
+                        <textarea name="razon_informacion" rows="4" style="font-size: 18px;"></textarea>
+                    </div>
+                    <br>
+                    <input type="submit" value="Enviar Encuesta"
+                        style="background-color: #4CAF50; color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; font-size: 18px; margin-top: 20px;">
+                </form>
+
+            </div>
+        </section>
+    </main>
+    <button id="toggle-chatbot" style="width: 100px; height: 100px;">
+        <img src="img/palmeras.png" alt="Palmera" style="width: 100%; height: 100%;">
+    </button>
+
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box"></div>
+        <input type="text" id="user-input" placeholder="Escribe tu mensaje...">
+        <button id="send-btn">Enviar</button>
+        <button id="exit-btn">Salir</button>
+    </div>
+
+</body>
+
+</html>

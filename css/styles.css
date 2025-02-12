@@ -1,0 +1,437 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav {
+    background-color: #444;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    padding: 10px;
+}
+
+nav ul li a {
+    font-size: 17px;
+    color: #fff;
+    padding: 40px;
+    text-decoration: none;
+}
+
+main {
+    clear: both;
+}
+
+section {
+    display: none;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #ff0000;
+}
+
+h2 {
+    color: #ff0000;
+}
+
+/* Contenedor responsivo */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+    /* Para un desplazamiento suave en dispositivos móviles */
+}
+
+/* Estilos de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #333;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+caption {
+    caption-side: top;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+thead {
+    border-bottom: 2px solid #333;
+}
+
+tfoot {
+    border-top: 2px solid #333;
+    background-color: #f2f2f2;
+}
+
+tfoot td {
+    font-weight: bold;
+}
+
+/* Media queries para diseño responsivo */
+@media (max-width: 768px) {
+
+    th,
+    td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    caption {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    th,
+    td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    caption {
+        font-size: 14px;
+    }
+}
+
+.imagen-container1 {
+    position: relative;
+    text-align: center;
+    max-width: 100%;
+    margin-bottom: 20px;
+    top: 0px;
+    left: 0px;
+}
+
+.imagen-container {
+    text-align: center;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.imagen-container img:nth-child(1) {
+    position: relative;
+    top: 0px;
+    left: -6%;
+    max-width: 10%;
+    height: auto;
+}
+
+.imagen-container img:nth-child(2) {
+    position: relative;
+    top: -50px;
+    left: -3%;
+    max-width: 13%;
+    height: auto;
+}
+
+.imagen-container img:nth-child(3) {
+    position: relative;
+    top: -50px;
+    left: 0%;
+    max-width: 15%;
+    height: auto;
+}
+
+.imagen-container img:nth-child(4) {
+    position: relative;
+    top: -50px;
+    left: 3%;
+    max-width: 15%;
+    height: auto;
+}
+
+.texto-movil {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+    animation: moverTexto 15s linear infinite;
+}
+
+@keyframes moverTexto {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(0);
+    }
+
+    55% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+section#servicios {
+    text-align: center;
+}
+
+section#servicios h3,
+section#servicios p {
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+    max-width: 600px;
+}
+
+section#servicios h4 {
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+    max-width: 600px;
+}
+
+.servicio {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.servicio-img {
+    margin-left: 300px;
+    max-width: 280px;
+    margin-top: 120px;
+}
+
+.servicio-texto {
+    max-width: 60%;
+}
+
+.servicio h3,
+.servicio h4,
+.servicio p {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#servicios h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+#servicios p2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+
+/* Estilos para el modal de reserva */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.habitacion {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="date"],
+form input[type="number"],
+form textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos para el modal de reserva *
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: -125px;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #333;
+}
+
+/* Cambios de color al hacer clic en las habitaciones *
+.habitacion {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.habitacion.disponible:hover {
+    background-color: lightgreen;
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+}
+
+select#tipoHabitacion {
+    width: auto;
+    max-width: 250px; /* Ajustar según sea necesario *
+    min-width: 180px; /* Ajustar según sea necesario *
+}
